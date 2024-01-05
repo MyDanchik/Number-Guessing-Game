@@ -15,6 +15,10 @@
 		98D3E5DD2B47E14200EEF390 /* GameResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3E5DC2B47E14200EEF390 /* GameResultViewController.swift */; };
 		98D3E5DF2B47F8B300EEF390 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3E5DE2B47F8B300EEF390 /* GameViewController.swift */; };
 		98D3E5E12B481C8800EEF390 /* NumberGuessingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3E5E02B481C8800EEF390 /* NumberGuessingGame.swift */; };
+		98D3E5E32B4820B400EEF390 /* GameUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3E5E22B4820B400EEF390 /* GameUI.swift */; };
+		98D3E5E52B4821B200EEF390 /* GameButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3E5E42B4821B200EEF390 /* GameButtons.swift */; };
+		98D3E5E72B48230000EEF390 /* SetingGameButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3E5E62B48230000EEF390 /* SetingGameButtons.swift */; };
+		98D3E5E92B48245D00EEF390 /* GameResultUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3E5E82B48245D00EEF390 /* GameResultUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		98D3E5DC2B47E14200EEF390 /* GameResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
 		98D3E5DE2B47F8B300EEF390 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		98D3E5E02B481C8800EEF390 /* NumberGuessingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGuessingGame.swift; sourceTree = "<group>"; };
+		98D3E5E22B4820B400EEF390 /* GameUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUI.swift; sourceTree = "<group>"; };
+		98D3E5E42B4821B200EEF390 /* GameButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtons.swift; sourceTree = "<group>"; };
+		98D3E5E62B48230000EEF390 /* SetingGameButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetingGameButtons.swift; sourceTree = "<group>"; };
+		98D3E5E82B48245D00EEF390 /* GameResultUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +75,12 @@
 				19F359D42B473F75001498B0 /* LaunchScreen.storyboard */,
 				19F359D72B473F75001498B0 /* Info.plist */,
 				98D3E5DE2B47F8B300EEF390 /* GameViewController.swift */,
-				98D3E5DC2B47E14200EEF390 /* GameResultViewController.swift */,
 				98D3E5E02B481C8800EEF390 /* NumberGuessingGame.swift */,
+				98D3E5E22B4820B400EEF390 /* GameUI.swift */,
+				98D3E5E42B4821B200EEF390 /* GameButtons.swift */,
+				98D3E5E62B48230000EEF390 /* SetingGameButtons.swift */,
+				98D3E5DC2B47E14200EEF390 /* GameResultViewController.swift */,
+				98D3E5E82B48245D00EEF390 /* GameResultUI.swift */,
 			);
 			path = "Number-Guessing-Game";
 			sourceTree = "<group>";
@@ -145,8 +157,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				98D3E5E12B481C8800EEF390 /* NumberGuessingGame.swift in Sources */,
+				98D3E5E32B4820B400EEF390 /* GameUI.swift in Sources */,
 				98D3E5DF2B47F8B300EEF390 /* GameViewController.swift in Sources */,
 				98D3E5DD2B47E14200EEF390 /* GameResultViewController.swift in Sources */,
+				98D3E5E52B4821B200EEF390 /* GameButtons.swift in Sources */,
+				98D3E5E72B48230000EEF390 /* SetingGameButtons.swift in Sources */,
+				98D3E5E92B48245D00EEF390 /* GameResultUI.swift in Sources */,
 				19F359CA2B473F74001498B0 /* AppDelegate.swift in Sources */,
 				19F359CC2B473F74001498B0 /* SceneDelegate.swift in Sources */,
 			);
