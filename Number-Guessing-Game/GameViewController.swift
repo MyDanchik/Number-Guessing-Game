@@ -54,35 +54,47 @@ class GameViewController: UIViewController, GameResultDelegate  {
         game = NumberGuessingGame()
         game.loadGame()
         print("Загаданное число: \(game.secretNumber)")
-        
         // Создание и размещение элементов интерфейса
         setupUI()
         //setupButtons()
     }
     
     func setupUI() {
+        view.backgroundColor = UIColor(red: 35/255, green: 35/255, blue: 35/255, alpha: 1.0)
+
         // Label для отображения вводимого числа
         textLabel = UILabel()
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.textAlignment = .center
-        textLabel.font = UIFont.systemFont(ofSize: 20)
+        textLabel.font = UIFont.systemFont(ofSize: 30)  // Adjust the font size as needed
+        textLabel.textColor = .white
+        textLabel.backgroundColor = UIColor(red: 48/255, green: 48/255, blue: 48/255, alpha: 1.0)
+        textLabel.layer.cornerRadius = 15  // Adjust the corner radius as needed
+        textLabel.clipsToBounds = true
         view.addSubview(textLabel)
+
         // Создание и размещение элементов интерфейса
         setupButtons()
+
         // Set constraints for textLabel
         NSLayoutConstraint.activate([
-            textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textLabel.bottomAnchor.constraint(equalTo: buttonsStackView.topAnchor, constant: -50),
+            textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            textLabel.bottomAnchor.constraint(equalTo: buttonsStackView.topAnchor, constant: -20), // Adjust the spacing as needed
+            textLabel.heightAnchor.constraint(equalToConstant: 80),  // Adjust the height as needed
         ])
+
         // Set constraints for buttonsStackView
         NSLayoutConstraint.activate([
-            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             buttonsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+
         // Обновление интерфейса
         updateUI()
     }
+
     
     private let buttonsStackView: UIStackView = {
         let stackView = UIStackView()
@@ -108,8 +120,8 @@ class GameViewController: UIViewController, GameResultDelegate  {
         
         // Set constraints for buttonsStackView
         NSLayoutConstraint.activate([
-            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             buttonsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
     }
@@ -125,11 +137,17 @@ class GameViewController: UIViewController, GameResultDelegate  {
             let button: UIButton
             if title == "Стереть" {
                 button = UIButton(type: .system)
-                button.setImage(UIImage(systemName: "delete.left"), for: .normal)
+                button.setImage(UIImage(systemName: "xmark"), for: .normal)
+                button.tintColor = UIColor.white
+                let configuration = UIImage.SymbolConfiguration(pointSize: 30)
+                button.setPreferredSymbolConfiguration(configuration, forImageIn: .normal)
                 button.addTarget(self, action: #selector(clearButtonPressed), for: .touchUpInside)
             } else if title == "Подтвердить" {
                 button = UIButton(type: .system)
-                button.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+                button.setImage(UIImage(systemName: "checkmark"), for: .normal)
+                button.tintColor = UIColor.white
+                let configuration = UIImage.SymbolConfiguration(pointSize: 30)
+                button.setPreferredSymbolConfiguration(configuration, forImageIn: .normal)
                 button.addTarget(self, action: #selector(confirmButtonPressed), for: .touchUpInside)
             } else {
                 button = UIButton(type: .system)
@@ -137,6 +155,27 @@ class GameViewController: UIViewController, GameResultDelegate  {
                 button.addTarget(self, action: #selector(numberButtonPressed(_:)), for: .touchUpInside)
             }
             
+            // Set the background color
+            if  title == "Подтвердить" {
+                button.backgroundColor = UIColor(red: 0/255, green: 176/255, blue: 160/255, alpha: 1.0)
+            } else if title == "Стереть" {
+                button.backgroundColor = UIColor(red: 255/255, green: 64/255, blue: 64/255, alpha: 1.0)
+            } else {
+                button.backgroundColor = UIColor(red: 48/255, green: 48/255, blue: 48/255, alpha: 1.0)
+            }
+            // Add corner radius for a rounded appearance
+            button.layer.cornerRadius = 10
+            button.clipsToBounds = true
+            
+            // Add width and height constraints
+            //button.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            button.heightAnchor.constraint(equalToConstant: 60).isActive = true
+
+
+            // Set font size and text color
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+            button.setTitleColor(.white, for: .normal)
+
             button.addTarget(self, action: #selector(numberButtonPressed(_:)), for: .touchUpInside)
             button.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -144,6 +183,10 @@ class GameViewController: UIViewController, GameResultDelegate  {
         }
         return stackView
     }
+
+
+
+
     
     @objc func numberButtonPressed(_ sender: UIButton) {
         if let title = sender.title(for: .normal) {
@@ -214,7 +257,13 @@ class GameViewController: UIViewController, GameResultDelegate  {
         }
     }
     func updateUI() {
-        textLabel.text = inputNumber
+        // If there is no input number, show the default message
+        if inputNumber.isEmpty {
+            textLabel.text = "Введите число"
+        } else {
+            // If there is an input number, show it
+            textLabel.text = inputNumber
+        }
     }
     
     func showAlert(message: String) {
