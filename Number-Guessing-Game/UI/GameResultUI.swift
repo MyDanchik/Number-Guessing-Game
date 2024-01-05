@@ -5,7 +5,7 @@ extension GameResultViewController {
     // MARK: - UI Setup
     
     func setupUI() {
-        view.backgroundColor = UIColor(red: 35/255, green: 35/255, blue: 35/255, alpha: 1.0)
+        view.backgroundColor = .backgroundVC
         
         view.addSubview(resultLabel)
         view.addSubview(resultMessLabel)

@@ -53,11 +53,11 @@ extension GameViewController {
             }
             
             if  title == "Подтвердить" {
-                button.backgroundColor = UIColor(red: 0/255, green: 176/255, blue: 160/255, alpha: 1.0)
+                button.backgroundColor = .nextButton
             } else if title == "Стереть" {
-                button.backgroundColor = UIColor(red: 255/255, green: 64/255, blue: 64/255, alpha: 1.0)
+                button.backgroundColor = .eraseButton
             } else {
-                button.backgroundColor = UIColor(red: 48/255, green: 48/255, blue: 48/255, alpha: 1.0)
+                button.backgroundColor = .buttonAll
             }
             
             button.layer.cornerRadius = 10

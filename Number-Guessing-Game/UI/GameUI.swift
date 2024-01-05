@@ -5,7 +5,7 @@ extension GameViewController {
     // MARK: - UI Setup
     
     func setupUI() {
-        view.backgroundColor = UIColor(red: 35/255, green: 35/255, blue: 35/255, alpha: 1.0)
+        view.backgroundColor = .backgroundVC
         
         // Label для отображения вводимого числа
         textLabel = UILabel()
@@ -13,7 +13,7 @@ extension GameViewController {
         textLabel.textAlignment = .center
         textLabel.font = UIFont.systemFont(ofSize: 30)
         textLabel.textColor = .white
-        textLabel.backgroundColor = UIColor(red: 48/255, green: 48/255, blue: 48/255, alpha: 1.0)
+        textLabel.backgroundColor = .labelSet
         textLabel.layer.cornerRadius = 15
         textLabel.clipsToBounds = true
         view.addSubview(textLabel)

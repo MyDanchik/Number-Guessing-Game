@@ -35,7 +35,7 @@ class GameResultViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Продолжить", for: .normal)
         button.tintColor = UIColor.white
-        button.backgroundColor = UIColor(red: 255/255, green: 64/255, blue: 64/255, alpha: 1.0)
+        button.backgroundColor = .continueButton
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
         button.widthAnchor.constraint(equalToConstant: 190).isActive = true
@@ -49,7 +49,7 @@ class GameResultViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Начать новую игру", for: .normal)
         button.tintColor = UIColor.white
-        button.backgroundColor = UIColor(red: 0/255, green: 176/255, blue: 160/255, alpha: 1.0)
+        button.backgroundColor = .nextButton
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
         button.widthAnchor.constraint(equalToConstant: 190).isActive = true

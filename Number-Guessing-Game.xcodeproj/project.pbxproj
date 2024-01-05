@@ -68,21 +68,53 @@
 		19F359C82B473F74001498B0 /* Number-Guessing-Game */ = {
 			isa = PBXGroup;
 			children = (
-				19F359C92B473F74001498B0 /* AppDelegate.swift */,
-				19F359CB2B473F74001498B0 /* SceneDelegate.swift */,
-				19F359CF2B473F74001498B0 /* Main.storyboard */,
-				19F359D22B473F75001498B0 /* Assets.xcassets */,
-				19F359D42B473F75001498B0 /* LaunchScreen.storyboard */,
+				98D3E5EA2B4825F000EEF390 /* File */,
+				98D3E5EB2B48262100EEF390 /* VC */,
+				98D3E5EC2B48267200EEF390 /* UI */,
+				98D3E5ED2B4826BA00EEF390 /* Manager */,
 				19F359D72B473F75001498B0 /* Info.plist */,
-				98D3E5DE2B47F8B300EEF390 /* GameViewController.swift */,
-				98D3E5E02B481C8800EEF390 /* NumberGuessingGame.swift */,
-				98D3E5E22B4820B400EEF390 /* GameUI.swift */,
-				98D3E5E42B4821B200EEF390 /* GameButtons.swift */,
-				98D3E5E62B48230000EEF390 /* SetingGameButtons.swift */,
-				98D3E5DC2B47E14200EEF390 /* GameResultViewController.swift */,
-				98D3E5E82B48245D00EEF390 /* GameResultUI.swift */,
+				19F359D22B473F75001498B0 /* Assets.xcassets */,
 			);
 			path = "Number-Guessing-Game";
+			sourceTree = "<group>";
+		};
+		98D3E5EA2B4825F000EEF390 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				19F359CB2B473F74001498B0 /* SceneDelegate.swift */,
+				19F359C92B473F74001498B0 /* AppDelegate.swift */,
+				19F359CF2B473F74001498B0 /* Main.storyboard */,
+				19F359D42B473F75001498B0 /* LaunchScreen.storyboard */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		98D3E5EB2B48262100EEF390 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				98D3E5DE2B47F8B300EEF390 /* GameViewController.swift */,
+				98D3E5DC2B47E14200EEF390 /* GameResultViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		98D3E5EC2B48267200EEF390 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				98D3E5E22B4820B400EEF390 /* GameUI.swift */,
+				98D3E5E62B48230000EEF390 /* SetingGameButtons.swift */,
+				98D3E5E82B48245D00EEF390 /* GameResultUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		98D3E5ED2B4826BA00EEF390 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				98D3E5E02B481C8800EEF390 /* NumberGuessingGame.swift */,
+				98D3E5E42B4821B200EEF390 /* GameButtons.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
