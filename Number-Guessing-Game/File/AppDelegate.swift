@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Number-Guessing-Game
-//
-//  Created by Daniil Yushkevich on 4.01.24.
-//
-
 import UIKit
 
 @main
