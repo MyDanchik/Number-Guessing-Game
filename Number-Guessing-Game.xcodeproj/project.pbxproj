@@ -13,6 +13,7 @@
 		19F359D12B473F74001498B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F359CF2B473F74001498B0 /* Main.storyboard */; };
 		19F359D32B473F75001498B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F359D22B473F75001498B0 /* Assets.xcassets */; };
 		19F359D62B473F75001498B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F359D42B473F75001498B0 /* LaunchScreen.storyboard */; };
+		98D3E5DD2B47E14200EEF390 /* GameResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3E5DC2B47E14200EEF390 /* GameResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		19F359D22B473F75001498B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19F359D52B473F75001498B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19F359D72B473F75001498B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98D3E5DC2B47E14200EEF390 /* GameResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				19F359D22B473F75001498B0 /* Assets.xcassets */,
 				19F359D42B473F75001498B0 /* LaunchScreen.storyboard */,
 				19F359D72B473F75001498B0 /* Info.plist */,
+				98D3E5DC2B47E14200EEF390 /* GameResultViewController.swift */,
 			);
 			path = "Number-Guessing-Game";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F359CE2B473F74001498B0 /* ViewController.swift in Sources */,
+				98D3E5DD2B47E14200EEF390 /* GameResultViewController.swift in Sources */,
 				19F359CA2B473F74001498B0 /* AppDelegate.swift in Sources */,
 				19F359CC2B473F74001498B0 /* SceneDelegate.swift in Sources */,
 			);

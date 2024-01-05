@@ -41,8 +41,8 @@ class NumberGuessingGame {
     }
 }
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, GameResultDelegate  {
+    
     var textLabel: UILabel!
     var inputNumber: String = ""
     var game: NumberGuessingGame!
@@ -53,6 +53,7 @@ class ViewController: UIViewController {
         // Инициализация игры
         game = NumberGuessingGame()
         game.loadGame()
+        
 
         // Создание и размещение элементов интерфейса
         setupUI()
@@ -89,13 +90,6 @@ class ViewController: UIViewController {
         confirmButton.addTarget(self, action: #selector(confirmButtonPressed), for: .touchUpInside)
         view.addSubview(confirmButton)
         
-        // Кнопка "Начать с начала"
-        let restartButton = UIButton(type: .system)
-        restartButton.setTitle("Начать с начала", for: .normal)
-        restartButton.frame = CGRect(x: 20, y: 350, width: view.frame.width - 40, height: 40)
-        restartButton.addTarget(self, action: #selector(restartButtonPressed), for: .touchUpInside)
-        view.addSubview(restartButton)
-
         // Обновление интерфейса
         updateUI()
     }
@@ -117,23 +111,19 @@ class ViewController: UIViewController {
         inputNumber = ""
         updateUI()
     }
-    
-    @objc func restartButtonPressed() {
-        // Начать новую игру
-        game = NumberGuessingGame()
-        game.saveGame()
-        inputNumber = ""
-        
-        // Обновление интерфейса
-        updateUI()
-    }
 
     @objc func confirmButtonPressed() {
         if let guessedNumber = Int(inputNumber) {
             let result = game.guess(number: guessedNumber)
-            showAlert(message: result)
-            inputNumber = ""
 
+            // Показываем результатный экран
+            let resultViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameResultViewController") as! GameResultViewController
+            resultViewController.attempts = game.attempts
+            resultViewController.isNumberGuessed = (result.range(of: "Поздравляю") != nil)
+            resultViewController.delegate = self
+            present(resultViewController, animated: true, completion: nil)
+            inputNumber = ""
+            
             // Обновление интерфейса
             updateUI()
 
@@ -143,7 +133,24 @@ class ViewController: UIViewController {
             showAlert(message: "Введите число от 0 до 9.")
         }
     }
+    
+    
+    
+    func didTapContinue() {
+        dismiss(animated: true, completion: nil)
 
+    }
+    
+    func didTapNewGame() {
+        game = NumberGuessingGame()
+        game.saveGame()
+        inputNumber = ""
+        
+        // Обновление интерфейса
+        updateUI()
+        dismiss(animated: true, completion: nil)
+
+    }
     func updateUI() {
         textLabel.text = inputNumber
     }
